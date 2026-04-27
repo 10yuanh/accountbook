@@ -10,7 +10,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .top-bar h1{font-size:18px;font-weight:600}
 .settings-btn{font-size:13px;padding:6px 12px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#555;cursor:pointer}
-.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.people-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
 .person-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 10px;text-align:center}
 .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;margin:0 auto 8px}
 .person-name{font-size:14px;font-weight:600;margin-bottom:4px}
@@ -21,16 +21,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .add-box{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:16px;margin-bottom:12px}
 .field-row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
 .field-row:last-child{margin-bottom:0}
-.field-row label{font-size:13px;color:#666;min-width:36px;white-space:nowrap}
-.field-row input{flex:1;font-size:14px;padding:8px 10px;border:1px solid #ddd;border-radius:8px;outline:none;background:#fff;color:#1a1a1a}
-.field-row input:focus{border-color:#555}
-.seg-btns{display:flex;gap:6px;flex:1}
-.seg-btn{flex:1;padding:8px 4px;font-size:13px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;transition:all 0.1s}
+.field-row label{font-size:13px;color:#666;min-width:36px;white-space:nowrap;flex-shrink:0}
+.seg-btns{display:flex;gap:6px;flex:1;min-width:0}
+.seg-btn{flex:1;padding:8px 4px;font-size:13px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;white-space:nowrap}
 .seg-btn.on{background:#1a1a1a;border-color:#1a1a1a;color:#fff;font-weight:600}
-.who-btn{flex:1;padding:8px 4px;font-size:13px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer}
+.who-btn{flex:1;padding:8px 4px;font-size:13px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;white-space:nowrap}
 .who-btn.on-0{background:#e1f5ee;border-color:#1D9E75;color:#085041;font-weight:600}
 .who-btn.on-1{background:#e6f1fb;border-color:#378ADD;color:#0C447C;font-weight:600}
-.who-btn.on-2{background:#faeeda;border-color:#BA7517;color:#633806;font-weight:600}
+.amount-note-row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.amount-note-row label{font-size:13px;color:#666;min-width:36px;white-space:nowrap;flex-shrink:0}
+.amount-note-row input[type="number"]{width:90px;flex-shrink:0;font-size:14px;padding:8px 10px;border:1px solid #ddd;border-radius:8px;outline:none;background:#fff;color:#1a1a1a}
+.amount-note-row input[type="number"]:focus{border-color:#555}
+.amount-note-row input[type="text"]{flex:1;min-width:0;font-size:14px;padding:8px 10px;border:1px solid #ddd;border-radius:8px;outline:none;background:#fff;color:#1a1a1a}
+.amount-note-row input[type="text"]:focus{border-color:#555}
 .submit-btn{width:100%;padding:11px;font-size:15px;font-weight:600;border:none;border-radius:8px;background:#1a1a1a;color:#fff;cursor:pointer}
 .submit-btn:disabled{opacity:0.5;cursor:not-allowed}
 .status-bar{font-size:13px;text-align:center;padding:6px 0;min-height:28px;color:#888}
@@ -40,20 +43,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .log-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #f0f0f0}
 .log-head-label{font-size:13px;font-weight:600;color:#666}
 .refresh-btn{font-size:12px;padding:4px 10px;border:1px solid #ddd;border-radius:999px;background:#fff;color:#666;cursor:pointer}
-.log-entry{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #f5f5f5;font-size:13px}
+.log-entry{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #f5f5f5;gap:8px}
 .log-entry:last-child{border-bottom:none}
-.log-note{font-weight:600;font-size:14px}
-.log-meta{font-size:12px;color:#888;margin-top:2px}
-.log-right{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.log-left{flex:1;min-width:0}
+.log-note{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log-meta{font-size:12px;color:#888;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log-right{display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
 .log-amt{font-weight:600;font-size:14px}
-.del-btn{background:none;border:none;color:#ccc;cursor:pointer;font-size:18px;line-height:1;padding:0 2px}
+.del-btn{background:none;border:none;color:#ccc;cursor:pointer;font-size:18px;line-height:1;padding:0 2px;flex-shrink:0}
 .empty-log{padding:1.5rem;text-align:center;font-size:13px;color:#aaa}
 .settle-box{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:16px;margin-bottom:12px}
 .settle-title{font-size:12px;font-weight:600;color:#888;margin-bottom:10px;letter-spacing:0.05em;text-transform:uppercase}
 .settle-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:8px 0;border-bottom:1px solid #f5f5f5}
 .settle-row:last-child{border-bottom:none}
-.paid-btn{font-size:12px;padding:4px 12px;border-radius:999px;background:#e1f5ee;color:#0F6E56;border:none;cursor:pointer;font-weight:600}
-.cat-tag{font-size:11px;padding:2px 7px;border-radius:999px;font-weight:600;margin-right:4px}
+.paid-btn{font-size:12px;padding:4px 12px;border-radius:999px;background:#e1f5ee;color:#0F6E56;border:none;cursor:pointer;font-weight:600;white-space:nowrap}
+.cat-tag{font-size:11px;padding:2px 7px;border-radius:999px;font-weight:600;margin-right:4px;flex-shrink:0}
 .cat-meal{background:#faeeda;color:#633806}
 .cat-other{background:#f0f0f0;color:#555}
 .settings-panel{display:none;background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:16px;margin-bottom:12px}
@@ -85,10 +89,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="name-avatar" style="background:#e6f1fb;color:#0C447C" id="av1"></div>
     <input type="text" id="name1" maxlength="8" placeholder="成員2名稱">
   </div>
-  <div class="name-row">
-    <div class="name-avatar" style="background:#faeeda;color:#633806" id="av2"></div>
-    <input type="text" id="name2" maxlength="8" placeholder="成員3名稱">
-  </div>
   <button class="save-names-btn" onclick="saveNames()">儲存名稱</button>
   <p class="warn-text">⚠ 修改名稱後，Sheets 中舊有記錄不會自動更新，建議開始記帳前先設定好。</p>
 </div>
@@ -107,10 +107,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <label>欠誰</label>
     <div class="seg-btns" id="who-btns"></div>
   </div>
-  <div class="field-row">
+  <div class="amount-note-row">
     <label>金額</label>
-    <input type="number" id="amt" placeholder="NT$" min="1" style="max-width:100px">
-    <input type="text" id="note" placeholder="備註（選填）">
+    <input type="number" id="amt" placeholder="NT$" min="1">
+    <input type="text" id="note" placeholder="備註（選填）" maxlength="6">
   </div>
   <div class="field-row">
     <button class="submit-btn" id="submit-btn" onclick="addEntry()">新增記帳</button>
@@ -138,15 +138,16 @@ const API = 'https://script.google.com/macros/s/AKfycbyd39zCnVrrgfc1NGHtEQBUD9hr
 const COLORS = [
   {avbg:'#e1f5ee', avco:'#085041'},
   {avbg:'#e6f1fb', avco:'#0C447C'},
-  {avbg:'#faeeda', avco:'#633806'},
 ];
+
+const DEFAULT_NAMES = ['詩','旭'];
 
 function loadNames() {
   try {
-    const s = localStorage.getItem('member_names');
+    const s = localStorage.getItem('member_names_v2');
     if (s) return JSON.parse(s);
   } catch(e){}
-  return ['成員A','成員B','成員C'];
+  return [...DEFAULT_NAMES];
 }
 
 let MEMBERS = loadNames().map((name,i) => ({name,...COLORS[i]}));
@@ -163,7 +164,7 @@ function toggleSettings() {
       document.getElementById('name'+i).value = m.name;
       document.getElementById('av'+i).textContent = m.name[0]||'?';
     });
-    [0,1,2].forEach(i => {
+    [0,1].forEach(i => {
       document.getElementById('name'+i).oninput = () => {
         document.getElementById('av'+i).textContent = document.getElementById('name'+i).value[0]||'?';
       };
@@ -172,10 +173,10 @@ function toggleSettings() {
 }
 
 function saveNames() {
-  const names = [0,1,2].map(i => document.getElementById('name'+i).value.trim());
+  const names = [0,1].map(i => document.getElementById('name'+i).value.trim());
   if (names.some(n => !n)) { alert('名稱不能為空'); return; }
   MEMBERS = names.map((name,i) => ({name,...COLORS[i]}));
-  localStorage.setItem('member_names', JSON.stringify(names));
+  localStorage.setItem('member_names_v2', JSON.stringify(names));
   selectedWho = null;
   settingsOpen = false;
   document.getElementById('settings-panel').classList.remove('open');
@@ -268,15 +269,14 @@ function renderLog() {
   const colorMap = {};
   MEMBERS.forEach(m => colorMap[m.name] = m.avco);
   list.innerHTML = [...visible].reverse().map((e, ri) => {
-    const i = visible.length - 1 - ri;
     const origIdx = entries.indexOf(visible[visible.length - 1 - ri]);
     const col = colorMap[e.who] || '#888';
     const catClass = e.cat === '餐費' ? 'cat-meal' : 'cat-other';
-    const label = e.cat ? `<span class="cat-tag ${catClass}">${e.cat}</span>` : '';
-    const noteText = e.note ? ` ${e.note}` : '';
+    const catTag = e.cat ? `<span class="cat-tag ${catClass}">${e.cat}</span>` : '';
+    const noteText = e.note || '';
     return `<div class="log-entry">
-      <div>
-        <div class="log-note">${label}${noteText||'—'}</div>
+      <div class="log-left">
+        <div class="log-note">${catTag}${noteText || '—'}</div>
         <div class="log-meta">${fmtDate(e.date)} ｜ <span style="color:${col}">${e.who}</span> 欠</div>
       </div>
       <div class="log-right">
@@ -317,8 +317,8 @@ async function addEntry() {
   if (!selectedCat) { setStatus('請選擇項目（餐費或其他）', 'err'); return; }
   if (selectedWho === null) { setStatus('請選擇欠款人', 'err'); return; }
   const amt = parseFloat(document.getElementById('amt').value);
-  const note = document.getElementById('note').value.trim();
   if (!amt || amt <= 0) { setStatus('請輸入金額', 'err'); return; }
+  const note = document.getElementById('note').value.trim();
 
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
